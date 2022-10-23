@@ -1,0 +1,54 @@
+.kitchen {
+  &__menu {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px rgb(163, 161, 161);
+    &__item {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      cursor: pointer;
+        
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      
+    }
+    &__block {
+    
+      border: 1px solid #000;
+      margin-top: 20px;
+      padding: 40px;
+      border-radius: 10px;
+      display: none;
+      transition: 0.5s all;
+      &-item {
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        grid-template-rows: 40px;
+        .title,.weight,.price {
+          border-bottom: 1px dotted #000;
+          display: flex;
+          align-items: flex-end;
+        }
+        .first {
+          border: none;
+          align-items: flex-start;
+        }
+      }
+      .main {
+        font-weight: 700;
+      }
+    }
+  }
+}
+.active {
+  font-weight: 600;
+  color: rgb(175, 3, 3);
+}

@@ -1,0 +1,116 @@
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  width: 36px;
+  height: 21px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 5;
+  display: none;
+  cursor: pointer;
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+
+    background: #fff;
+  }
+  span.long {
+    width: 36px;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.6s;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+  &__block {
+    width: 345px;
+    height: 100%;
+    background: $main-color;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    transition: all 0.5s;
+    padding-top: 140px;
+    padding-left: 40px;
+  }
+  &__overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    opacity: 0.75;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 35px;
+  }
+  &__link {
+    position: relative;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    a {
+      color: #ffffff;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #000000;
+      border-radius: 100%;
+      left: -35px;
+      top: 11px;
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::before {
+        background: #fff;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    &__item {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
